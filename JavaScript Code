@@ -1,0 +1,19 @@
+function perimeter(n) {
+  let numberOfSquares = n+1;
+  let sideLengths = generateFibonacci(numberOfSquares);
+  let sum = 0;
+  for (let i = 0; i < numberOfSquares; i++)  {
+    let perimeter = 4*sideLengths[i]
+    sum += perimeter;
+  }
+  return sum;
+}
+
+function generateFibonacci(n) {
+  const fibonacciSeq = [1, 1];
+  for (let i = 2; i < n; i++) {
+    const num = fibonacciSeq[i - 1] + fibonacciSeq[i - 2];
+    fibonacciSeq.push(num);
+  }
+  return fibonacciSeq;
+}
